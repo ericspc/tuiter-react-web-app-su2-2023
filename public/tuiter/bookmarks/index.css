@@ -1,0 +1,51 @@
+.wd-float-left{
+    float:left;
+}
+
+.wd-pad-right{
+    margin-left: 10px;
+}
+
+.wd-font-size{
+    font-size: 16px;
+}
+.wd-float-right{
+    float:right;
+}
+
+.wd-float-done{
+     clear: both;
+    
+}
+
+.wd-border-fat {
+    border-width: 20px 30px 20px 30px; }
+
+.wd-border-thin {
+    border-width: 4px; }
+
+
+.wd-border-solid {
+    border-style: solid; }
+
+.wd-border-grey {
+    border-color: grey }
+
+.wd-rounded-corners-all-around {
+ border-radius: 50px;
+}
+
+.wd-rounded-corners-top {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+   }
+
+.wd-padded-left {
+    padding-left: 50px;
+  }
+
+.wd-padded-bottom{
+  padding-bottom: 50px;
+}
+  
+   
