@@ -13,35 +13,32 @@ faCommentDots} from "@fortawesome/free-solid-svg-icons";
 const NavigationSidebar = () => {
     const { pathname } = useLocation();
     const [ignore, tuiter, active] = pathname.split("/");
-    const links = ["home", "explore",   "notifications", "messages", "bookmarks", "lists", "profile",  "more"];
-    const icons = [<FontAwesomeIcon icon={faHouse} size={"xs"} />,
-        <FontAwesomeIcon icon={faHashtag} size={"xs"} />,
-        <FontAwesomeIcon icon={faBell} size={"xs"} />,
-        <FontAwesomeIcon icon={faEnvelope} size={"xs"} />,
-        <FontAwesomeIcon icon={faBookmark} size={"xs"} />,
-        <FontAwesomeIcon icon={faList} size={"xs"} />,
-        <FontAwesomeIcon icon={faUser} size={"xs"} />,
-        <FontAwesomeIcon icon={faCommentDots} size={"xs"} />
-    ]
     return (
         <div className="list-group">
-            <div className="row">
-                <div className="col-2">
-                    {icons.map((icon) =>
-                        <i className={`list-group-item text-capitalize ${active === icon ? "active" : ""}`}>
-                            {icon}
-                        </i>
-                    )}
-                </div>
-                <div className="col-10">
-                    {links.map((link) =>
-                        <Link to={`/tuiter/${link}`} className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}>
-                            {link}
-                        </Link>
-                    )}
-                </div>
-            </div>
-
+            <Link to={"/tuiter/home "} className={`list-group-item
+                ${active === "home" ? "active" : ""}`}><FontAwesomeIcon icon={faHouse} size={"sm"} />&nbsp;&nbsp;Home
+            </Link>
+            <Link to={"/tuiter/explore "} className={`list-group-item
+                ${active === "explore" ? "active" : ""}`}><FontAwesomeIcon icon={faHashtag} size={"sm"} />&nbsp;&nbsp;&nbsp;Explore
+            </Link>
+            <Link to={"/tuiter/notifications "} className={`list-group-item
+                ${active === "notifications" ? "active" : ""}`}><FontAwesomeIcon icon={faBell} size={"sm"} />&nbsp;&nbsp;&nbsp;Notifications
+            </Link>
+            <Link to={"/tuiter/messages "} className={`list-group-item
+                ${active === "messages" ? "active" : ""}`}><FontAwesomeIcon icon={faEnvelope} size={"sm"} />&nbsp;&nbsp;&nbsp;Messages
+            </Link>
+            <Link to={"/tuiter/bookmarks "} className={`list-group-item
+                ${active === "bookmarks" ? "active" : ""}`}><FontAwesomeIcon icon={faBookmark} size={"sm"} />&nbsp;&nbsp;&nbsp;&nbsp;Bookmarks
+            </Link>
+            <Link to={"/tuiter/lists "} className={`list-group-item 
+                ${active === "lists" ? "active" : ""}`}><FontAwesomeIcon icon={faList} size={"sm"} />&nbsp;&nbsp;&nbsp;Lists
+            </Link>
+            <Link to={"/tuiter/profile "} className={`list-group-item
+                ${active === "profile" ? "active" : ""}`}><FontAwesomeIcon icon={faUser} size={"sm"} />&nbsp;&nbsp;&nbsp;Profile
+            </Link>
+            <Link to={"/tuiter/more "} className={`list-group-item
+                ${active === "more" ? "active" : ""}`}> <FontAwesomeIcon icon={faCommentDots} size={"sm"} />&nbsp;&nbsp;&nbsp;More
+            </Link>
         </div>
     );
 };
