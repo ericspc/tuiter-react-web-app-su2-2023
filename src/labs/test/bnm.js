@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import Jkl from "./jkl";
-function Bnm({ sdf = 4}) {
+function Bnm({ sdf = 4 }) {
     return (
         <div>
             <Link to={`/q11/${sdf}`}>BUTTON</Link>
