@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 function Delete() {
-    let qwe = [123, 234, 345, 456, 567];
-    const wer = (tyu) => {
-        qwe = tyu;
-    };
-    const ert = (rty) => {
-        const tyu = qwe.filter((yui) => yui != rty);
-        wer(tyu);
-        console.log(qwe);
-    };
-    return (
-        <div>
-            <button onClick={() => ert(345)}>BUTTON</button>
-        </div>
-    );
+    const qwe = 987
+    const asd = 321
+    const ytr = [321,qwe,432,asd,987]
+    const [rew, ewq] = ytr
+    console.log(rew)
+    console.log(ewq)
+    return(
+        <>
+            {rew}
+            {ewq}
+        </>
+    )
 
 }
 export default Delete

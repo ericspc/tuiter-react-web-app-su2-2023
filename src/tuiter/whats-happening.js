@@ -8,7 +8,7 @@ import {HiOutlineLocationMarker} from "react-icons/hi";
 import {BiBold} from "react-icons/bi";
 import {BiItalic} from "react-icons/bi";
 import {useDispatch} from "react-redux";
-import {createTuit} from "./reducers/home-reducer";
+import {createTuitThunk} from "./services/tuits-thunks";
 
 const WhatsHappening = () => {
     let [whatsHappening, setWhatsHappening] = useState('');
@@ -18,7 +18,7 @@ const WhatsHappening = () => {
         const newTuit = {
             tuit: whatsHappening
         }
-        dispatch(createTuit(newTuit));
+        dispatch(createTuitThunk(newTuit));
         setWhatsHappening("");
 
     }

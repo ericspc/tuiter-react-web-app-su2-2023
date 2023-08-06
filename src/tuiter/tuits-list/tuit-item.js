@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
-import {deleteTuit} from "../reducers/home-reducer";
-import React from "react";
+import {deleteTuitThunk} from "../services/tuits-thunks";
+import React, {useEffect} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faArrowUpFromBracket,
@@ -10,19 +10,17 @@ import {
     faRetweet,
     faX
 } from "@fortawesome/free-solid-svg-icons";
+import TuitStats from "./tuit-stats";
 
-const TuitItem = () => {
-    const { tuits } = useSelector(state => state.home)
+const TuitItem = ({tuit}) => {
+    // const {} = useSelector(state => state.tuits)
     const dispatch = useDispatch();
     const deleteTuitHandler = (id) => {
-        dispatch(deleteTuit(id));
+        dispatch(deleteTuitThunk(id));
     }
-
     return (
         <>
             <ul className="list-group">
-                {
-                    tuits.map(tuit =>
                         <li className="list-group-item">
                             <div className="row">
                                 <div className="col-1">
@@ -37,42 +35,12 @@ const TuitItem = () => {
                                     </div>
                                     <div>{tuit.tuit}</div>
                                     <br/>
-                                    {/*<div>*/}
-                                    {/*    <FontAwesomeIcon icon={faCommentDots}/>&nbsp;&nbsp;*/}
-                                    {/*    {tuit.replies}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    &nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    <FontAwesomeIcon icon={faRetweet}/>&nbsp;&nbsp;*/}
-                                    {/*    {tuit.retuits}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    &nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    <FontAwesomeIcon icon={faHeart} style={{color: "#ff0000",}}/>&nbsp;&nbsp;*/}
-                                    {/*    {tuit.likes}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    &nbsp;&nbsp;&nbsp;&nbsp;*/}
-                                    {/*    <FontAwesomeIcon icon={faArrowUpFromBracket}/>*/}
-                                    {/*</div>*/}
-                                    <div className="row">
-                                        <div className="col-3">
-                                            <FontAwesomeIcon icon={faCommentDots}/>&nbsp;&nbsp;
-                                            {tuit.replies}
-                                        </div>
-                                        <div className="col-3">
-                                            <FontAwesomeIcon icon={faRetweet}/>&nbsp;&nbsp;
-                                            {tuit.retuits}
-                                        </div>
-                                        <div className="col-3">
-                                            <FontAwesomeIcon icon={faHeart} style={{color: "#ff0000",}}/>&nbsp;&nbsp;
-                                            {tuit.likes}
-                                        </div>
-                                        <div className="col-3">
-                                            <FontAwesomeIcon icon={faArrowUpFromBracket}/>
-                                        </div>
+                                    <div>
+                                        <TuitStats tuit = {tuit}/>
                                     </div>
                                 </div>
                             </div>
-                        </li>)
-                }
+                        </li>
             </ul>
         </>
     );
