@@ -28,8 +28,7 @@ const NavigationSidebar = () => {
                     ${active === "notifications" ? "active" : ""}`}><FontAwesomeIcon icon={faBell} size={"sm"} />&nbsp;&nbsp;&nbsp;Notifications
                 </Link>
                 <Link to={"/tuiter/messages "} className={`list-group-item
-                    ${active === "messages" ? "active" : ""}`}><FontAwesomeIcon icon={faEnvelope} size={"sm"} />&nbsp;&nbsp;&nbsp;Messages
-                </Link>
+                    ${active === "messages" ? "active" : ""}`}><FontAwesomeIcon icon={faEnvelope} size={"sm"} />&nbsp;&nbsp;&nbsp;Messages</Link>
                 <Link to={"/tuiter/bookmarks "} className={`list-group-item
                     ${active === "bookmarks" ? "active" : ""}`}><FontAwesomeIcon icon={faBookmark} size={"sm"} />&nbsp;&nbsp;&nbsp;&nbsp;Bookmarks
                 </Link>

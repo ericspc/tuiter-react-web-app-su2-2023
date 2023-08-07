@@ -14,7 +14,7 @@ function ProfileScreen() {
             const { payload } = await dispatch(profileThunk());
             setProfile(payload);
         };
-       loadProfile();
+       loadProfile().then(/*do something*/);
     }, []);
     return ( <div>
         <h1>Profile Screen</h1>
@@ -43,10 +43,9 @@ function ProfileScreen() {
         <button
             onClick={() => {
                 dispatch(logoutThunk());
-                navigate("/login");
+                navigate("/tuiter/login");
             }}>                   Logout</button>
         <button onClick={save}>Save  </button>
-        ;
     </div>)
 }
 export default ProfileScreen;

@@ -11,7 +11,6 @@ function RegisterScreen() {
     const handleRegister = async () => {
         try {
             const user = await dispatch(registerThunk({ username, password }));
-            // console.log(user)
             if (user.error) {
                 alert("User already exists")
             } else {
@@ -36,7 +35,7 @@ function RegisterScreen() {
                 </div>
                 <button className="btn btn-primary mt-2"
                         onClick={handleRegister}>
-                    Login
+                    Register
                 </button>
             </div>
         )
