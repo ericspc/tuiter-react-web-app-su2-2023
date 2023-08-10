@@ -1,1 +1,1 @@
-export REACT_APP_API_URL=http://localhost:3000/api
+export REACT_APP_API_URL=https://tuiter-node-server-app-a6-7oth.onrender.com/api
